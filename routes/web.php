@@ -64,4 +64,6 @@ Route::get('/urllekeres' , function(){
 Route::get("/posts/{post}", [App\Http\Controllers\PostController::class, "show"]);
 
 
-Route::get("/{nev}", [App\Http\Controllers\OraiFController::class, "show"]);
+//Route::get("/{nev}", [App\Http\Controllers\OraiFController::class, "show"]);
+
+Route::get("/flights/{flight}" , [App\Http\Controllers\FlightsController::class, 'show']);
