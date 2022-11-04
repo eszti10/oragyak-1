@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AirlinesController;
+use App\Http\Controllers\CitiesController;
+use App\Http\Controllers\PassangerController;
+use App\Models\Passanger;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,4 +70,21 @@ Route::get("/posts/{post}", [App\Http\Controllers\PostController::class, "show"]
 
 //Route::get("/{nev}", [App\Http\Controllers\OraiFController::class, "show"]);
 
+
+
 Route::get("/flights/{flight}" , [App\Http\Controllers\FlightsController::class, 'show']);
+
+
+Route::get("/utasok/create", [PassangerController::class, 'create']);
+Route::get("/utasok/{utas}", [PassangerController::class, 'show']);
+Route::post("/utasok" , [PassangerController::class, 'store']);
+
+
+Route::get("/legitarsasag" , [AirlinesController::class, 'index']);
+Route::get("/legitarsasag/{legi}" , [AirlinesController::class, 'show']);
+
+Route::get("/legitarsasag/create" , [App\Http\Controllers\AirlinesController::class, 'postcreate']);
+Route::post("/legitarsasag" , [AirlinesController::class, 'store']);
+
+Route::get("/varos/create" , [App\Http\Controllers\CitiesController::class, 'postcreate']);
+Route::post("/varos" , [CitiesController::class, 'store']);

@@ -23,7 +23,10 @@ return new class extends Migration
             $table->boolean('delayed')->default(false);
             $table->boolean('departed')->default(false);
             $table->timestamp('arrived_at')->nullable();
+            $table->unsignedBigInteger("airlinid");
             $table->timestamps();
+
+            $table->foreign("airlinid")->references("id")->on("airlines")->onDelete("cascade")->onUpdate("cascade");
         });
     }
 
