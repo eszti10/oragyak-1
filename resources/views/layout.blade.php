@@ -18,18 +18,17 @@
  <label for="show-menu" class="open"><span class="fa fa-bars"></span></label>
  <label for="show-menu" class="close"><span class="fa fa-times"></label>
  <ul id="menu">
-  <li><a class="{{Request::path() === '/' ? 'active' : ''}}" href="/">Kezddő oldal</a></li>
+  <li><a class="{{Request::path() === '/' ? 'active' : ''}}" href="/">Kezdő oldal</a></li>
   <li><a class="{{Request::path() === '/Dalos_Donat' ? 'active' : ''}}" href="/Dalos_Donat">Órai feladat</a></li>
-  <li><a class="{{Request::path() === '/legitarsasag/create' ? 'active' : ''}}" href="/legitarsasag/create">Új légitársaság</a></li>
-  <li><a class="{{Request::path() === '/varos/create' ? 'active' : ''}}" href="/varos/create">Új uticél</a></li>
+  <li><a class="{{Request::path() === '/legitarsasag' ? 'active' : ''}}" href="/legitarsasag">Légitársaság</a></li>
  </ul>
 </nav>
 <!-- // -->
 <!-- Banner -->
 <div id="banner">
  <div id="header">
-  <h1>OldSchool Pastel</h1>
-  <p class="sub">Fluid, responsive website template by MLPdesign.</p>
+  <h1>Szoftver minősig biz.</h1>
+  <p class="sub">Gyakorlat</p>
  </div>
 </div>
 <!-- // -->

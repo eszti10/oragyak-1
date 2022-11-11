@@ -53,7 +53,7 @@ Route::get('/urllekeres' , function(){
 
 /*Route::get('/post/{post}', function ($post) {
     $posts = [
-        "ez-az_elso" => "Hello ez au első oldal", 
+        "ez-az_elso" => "Hello ez az első oldal",
         "ez-a-masodik" => "Ez a második oldal"
     ];
     if (!array_key_exists($post, $posts)){
@@ -68,7 +68,7 @@ Route::get('/urllekeres' , function(){
 Route::get("/posts/{post}", [App\Http\Controllers\PostController::class, "show"]);
 
 
-//Route::get("/{nev}", [App\Http\Controllers\OraiFController::class, "show"]);
+
 
 
 
@@ -81,10 +81,14 @@ Route::post("/utasok" , [PassangerController::class, 'store']);
 
 
 Route::get("/legitarsasag" , [AirlinesController::class, 'index']);
-Route::get("/legitarsasag/{legi}" , [AirlinesController::class, 'show']);
-
 Route::get("/legitarsasag/create" , [App\Http\Controllers\AirlinesController::class, 'postcreate']);
+Route::delete("/legitarsasag/{legi}" , [AirlinesController::class, 'destroy']);
+
+Route::get("/legitarsasag/{legi}" , [AirlinesController::class, 'show']);
 Route::post("/legitarsasag" , [AirlinesController::class, 'store']);
 
 Route::get("/varos/create" , [App\Http\Controllers\CitiesController::class, 'postcreate']);
 Route::post("/varos" , [CitiesController::class, 'store']);
+
+
+Route::get("/{nev}", [App\Http\Controllers\OraiFController::class, "show"]);

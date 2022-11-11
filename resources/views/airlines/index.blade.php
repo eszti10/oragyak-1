@@ -1,5 +1,6 @@
 @extends("layout")
 @section('content')
+<a href="/legitarsasag/create">Légitásaság létrhozása</a>
 <table class="table">
   <thead>
     <tr>
