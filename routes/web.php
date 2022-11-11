@@ -82,6 +82,8 @@ Route::post("/utasok" , [PassangerController::class, 'store']);
 
 Route::get("/legitarsasag" , [AirlinesController::class, 'index']);
 Route::get("/legitarsasag/create" , [App\Http\Controllers\AirlinesController::class, 'postcreate']);
+Route::get("/legitarsasag/{legi}/edit" , [AirlinesController::class, 'edit']);
+Route::put("/legitarsasag/{legi}" , [AirlinesController::class, 'update']);
 Route::delete("/legitarsasag/{legi}" , [AirlinesController::class, 'destroy']);
 
 Route::get("/legitarsasag/{legi}" , [AirlinesController::class, 'show']);

@@ -5,9 +5,33 @@ namespace App\Http\Controllers;
 use App\Models\Airline;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Php;
 
 class AirlinesController extends Controller
 {
+    public function destroy($airline)
+    {
+        Airline::destroy($airline);
+        return redirect('legitarsasag');
+    }
+
+    public function edit($airline)
+    {
+        $adat = DB::table('airlines')
+        ->select('*')
+        ->where('id','=',$airline)->first();
+        return view('airlines.edit', compact('adat'));
+    }
+
+    public function update($airline)
+    {
+        $update = DB::table('airlines')->where('id' , $airline)->update([
+            'name' => request('name'),
+            'origin' => request('origin')
+        ]);
+        return redirect('legitarsasag');
+    }
+
     public function index()
     {
         $adat = DB::table('airlines')
