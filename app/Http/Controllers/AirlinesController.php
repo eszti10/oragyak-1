@@ -55,11 +55,23 @@ class AirlinesController extends Controller
     }
     public function store(Request $request)
     {
-        $s = new Airline();
-        $s->name = request("name");
-        $s->origin = request("origin");
-        $s->save();
-        return view("welcome");
-
+        if(request("name") == ""){
+            echo "Kötelező nevet megadni!";
+        }
+        elseif(request("origin") == ""){
+            echo "Kötelező központi várost megadni!";
+        }
+        else{
+            if(strlen(request("name")) < 4 ||  strlen(request("origin")) < 4 ){
+                echo "Legalább 5 karakternek lennie kell!";
+            }
+            else{
+                $s = new Airline();
+                $s->name = request("name");
+                $s->origin = request("origin");
+                $s->save();
+                echo "Sikeres volt a tárolás";
+            }
+        }
     }
 }

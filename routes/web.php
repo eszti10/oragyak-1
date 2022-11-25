@@ -3,6 +3,7 @@
 use App\Http\Controllers\AirlinesController;
 use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\PassangerController;
+use App\Http\Controllers\PictureController;
 use App\Models\Passanger;
 use Illuminate\Support\Facades\Route;
 
@@ -87,10 +88,15 @@ Route::put("/legitarsasag/{legi}" , [AirlinesController::class, 'update']);
 Route::delete("/legitarsasag/{legi}" , [AirlinesController::class, 'destroy']);
 
 Route::get("/legitarsasag/{legi}" , [AirlinesController::class, 'show']);
-Route::post("/legitarsasag" , [AirlinesController::class, 'store']);
+Route::post("/legitarsasag/mentes" , [AirlinesController::class, 'store'])->name("legimentes");
 
 Route::get("/varos/create" , [App\Http\Controllers\CitiesController::class, 'postcreate']);
 Route::post("/varos" , [CitiesController::class, 'store']);
+
+Route::get("/kepfeltoltes", [PictureController::class, 'create']);
+Route::get("/kepekmegtekintese", [PictureController::class, 'show']);
+Route::post("/kepekmegtekintese", [PictureController::class, 'store'])->name("kepmentes");
+
 
 
 Route::get("/{nev}", [App\Http\Controllers\OraiFController::class, "show"]);
