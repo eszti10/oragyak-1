@@ -21,7 +21,9 @@
   <li><a class="{{Request::path() === '/' ? 'active' : ''}}" href="/">Kezdő oldal</a></li>
   <li><a class="{{Request::path() === '/Dalos_Donat' ? 'active' : ''}}" href="/Dalos_Donat">Órai feladat</a></li>
   <li><a class="{{Request::path() === '/legitarsasag' ? 'active' : ''}}" href="/legitarsasag">Légitársaság</a></li>
- </ul>
+  <li><a class="{{Request::path() === '/legitarsasag/create' ? 'active' : ''}}" href="/legitarsasag/create">Légitársaság</a></li>
+
+</ul>
 </nav>
 <!-- // -->
 <!-- Banner -->

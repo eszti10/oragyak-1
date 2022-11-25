@@ -15,8 +15,19 @@
     @foreach($adat as $sor)
       <th><a href="/legitarsasag/{{$sor->id}}">{{$sor->name}}</a></th>
       <td>{{$sor->origin}}</td>
-      <td>törlés</td>
-      <td>módósítás</td>
+      <td>
+        <form action="legitarsasag/{{$sor->id}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <input class="btn btn-danger btn-block" type="submit" value="törlés">
+        </form>
+    </td>
+      <td>
+        <form action="legitarsasag/{{$sor->id}}/edit">
+
+            <input class="btn btn-info btn-block" type="submit" value="módosítás">
+            </form>
+      </td>
     </tr>
     @endforeach
   </tbody>
