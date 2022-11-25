@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Airline;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Php;
 
 class AirlinesController extends Controller
 {
@@ -17,18 +18,30 @@ class AirlinesController extends Controller
     public function edit($airline)
     {
         $adat = DB::table('airlines')
+<<<<<<< HEAD
             ->select('*')
             ->where('id', '=', $airline)->first();
+=======
+        ->select('*')
+        ->where('id','=',$airline)->first();
+>>>>>>> b0a30e549f7b01362544e360e4da41ed380044df
         return view('airlines.edit', compact('adat'));
     }
 
     public function update($airline)
     {
+<<<<<<< HEAD
         $update = DB::table('airlines')->where('id', $airline)->update([
             'name' => request('name'),
             'origin' => request('origin')
         ]);
 
+=======
+        $update = DB::table('airlines')->where('id' , $airline)->update([
+            'name' => request('name'),
+            'origin' => request('origin')
+        ]);
+>>>>>>> b0a30e549f7b01362544e360e4da41ed380044df
         return redirect('legitarsasag');
     }
 
@@ -55,6 +68,7 @@ class AirlinesController extends Controller
     }
     public function store(Request $request)
     {
+<<<<<<< HEAD
 
         if (request("name") == "") {
             echo "Kötelező megadni!";
@@ -64,11 +78,27 @@ class AirlinesController extends Controller
            if (strlen(request("name")) < 4 || strlen(request("origin")) < 4) {
                 echo "Legalább 5 karakternek kell lennie!";
             } else {
+=======
+        if(request("name") == ""){
+            echo "Kötelező nevet megadni!";
+        }
+        elseif(request("origin") == ""){
+            echo "Kötelező központi várost megadni!";
+        }
+        else{
+            if(strlen(request("name")) < 4 ||  strlen(request("origin")) < 4 ){
+                echo "Legalább 5 karakternek lennie kell!";
+            }
+            else{
+>>>>>>> b0a30e549f7b01362544e360e4da41ed380044df
                 $s = new Airline();
                 $s->name = request("name");
                 $s->origin = request("origin");
                 $s->save();
+<<<<<<< HEAD
                // return view("welcome");
+=======
+>>>>>>> b0a30e549f7b01362544e360e4da41ed380044df
                 echo "Sikeres volt a tárolás";
             }
         }

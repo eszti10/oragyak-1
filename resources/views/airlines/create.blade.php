@@ -30,10 +30,18 @@
                     },
                     success: function(re) {
                         $("#hiba").html(re);
+<<<<<<< HEAD
+=======
+
+>>>>>>> b0a30e549f7b01362544e360e4da41ed380044df
                     }
                 });
                 event.preventDefault();
             });
         });
+<<<<<<< HEAD
+=======
+
+>>>>>>> b0a30e549f7b01362544e360e4da41ed380044df
     </script>
 @endsection

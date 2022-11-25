@@ -83,11 +83,16 @@ Route::post("/utasok" , [PassangerController::class, 'store']);
 
 Route::get("/legitarsasag" , [AirlinesController::class, 'index']);
 Route::get("/legitarsasag/create" , [App\Http\Controllers\AirlinesController::class, 'postcreate']);
+<<<<<<< HEAD
 
 
 Route::get("/legitarsasag/{legi}/edit" , [AirlinesController::class, 'edit']);
 Route::put("/legitarsasag/{legi}" , [AirlinesController::class, 'update']);
 
+=======
+Route::get("/legitarsasag/{legi}/edit" , [AirlinesController::class, 'edit']);
+Route::put("/legitarsasag/{legi}" , [AirlinesController::class, 'update']);
+>>>>>>> b0a30e549f7b01362544e360e4da41ed380044df
 Route::delete("/legitarsasag/{legi}" , [AirlinesController::class, 'destroy']);
 
 Route::get("/legitarsasag/{legi}" , [AirlinesController::class, 'show']);
@@ -96,8 +101,16 @@ Route::post("/legitarsasag/mentes" , [AirlinesController::class, 'store'])->name
 Route::get("/varos/create" , [App\Http\Controllers\CitiesController::class, 'postcreate']);
 Route::post("/varos" , [CitiesController::class, 'store']);
 
+<<<<<<< HEAD
 Route::get("/kepfeltoltes", [PictureController::class,'create']);
 Route::get("/kepekmegtekintese", [PictureController::class,'show']);
 Route::post("/kepekmegtekintese", [PictureController::class,'store'])->name("kepmentese");
+=======
+Route::get("/kepfeltoltes", [PictureController::class, 'create']);
+Route::get("/kepekmegtekintese", [PictureController::class, 'show']);
+Route::post("/kepekmegtekintese", [PictureController::class, 'store'])->name("kepmentes");
+
+
+>>>>>>> b0a30e549f7b01362544e360e4da41ed380044df
 
 Route::get("/{nev}", [App\Http\Controllers\OraiFController::class, "show"]);

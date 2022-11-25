@@ -9,7 +9,6 @@
 <meta name="author" content="mlp design">
 <meta name="robots" content="index, follow">
 <link rel="stylesheet" href="{{ asset('css/pastel.css') }}">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <!-- Menu Items -->
@@ -21,9 +20,14 @@
   <li><a class="{{Request::path() === '/' ? 'active' : ''}}" href="/">Kezdő oldal</a></li>
   <li><a class="{{Request::path() === '/Dalos_Donat' ? 'active' : ''}}" href="/Dalos_Donat">Órai feladat</a></li>
   <li><a class="{{Request::path() === '/legitarsasag' ? 'active' : ''}}" href="/legitarsasag">Légitársaság</a></li>
+<<<<<<< HEAD
   <li><a class="{{Request::path() === '/legitarsasag/create' ? 'active' : ''}}" href="/legitarsasag/create">Légitársaság</a></li>
 
 </ul>
+=======
+  <li><a class="{{Request::path() === '/legitarsasag/create' ? 'active' : ''}}" href="/legitarsasag/create">Új Légitársaság</a></li>
+ </ul>
+>>>>>>> b0a30e549f7b01362544e360e4da41ed380044df
 </nav>
 <!-- // -->
 <!-- Banner -->
