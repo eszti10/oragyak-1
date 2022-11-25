@@ -18,13 +18,8 @@ class AirlinesController extends Controller
     public function edit($airline)
     {
         $adat = DB::table('airlines')
-<<<<<<< HEAD
-            ->select('*')
-            ->where('id', '=', $airline)->first();
-=======
         ->select('*')
         ->where('id','=',$airline)->first();
->>>>>>> b0a30e549f7b01362544e360e4da41ed380044df
         return view('airlines.edit', compact('adat'));
     }
 
